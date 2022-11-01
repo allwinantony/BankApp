@@ -1,0 +1,16 @@
+Data Binding:
+
+-share data inside th component
+
+Types of Data Binding:
+1. One way Biding(one direction data flow):
+    -ts file- component
+    -html file - view
+
+    1.1. Component to view(changes happening from ts->html)
+        a). String interpolation - {{expression}}
+        b). Property binding - [attribute_name] = "property"
+
+    1.2. View to component(changes happens from html->ts)
+        a). Event binding -(event_name) = "function_name()"
+        b).
