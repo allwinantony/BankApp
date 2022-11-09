@@ -1,0 +1,54 @@
+<div class="w-100 p-4 bg-dark text-start">
+    <h1 class="text-center text-light">Welcome {{user}}</h1>
+    <p class="text-start"><a routerLink='' class="text-decoration-none bg-danger text-light p-2 rounded-1">LogOut</a></p>
+    <a routerLink="/transaction" class="text-decoration-none bg-light m-2 p-2 rounded-1">View Transactions</a>
+</div>
+
+<div class="parent">
+    <div class="child">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+
+                <div class="col-8 bg-dark text-light mt-5 rounded-5 shadow-lg p-3 text-center">
+                        <h2 class="bg-light p-3 rounded-5 text-dark m-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                            <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                            </svg>
+                        <br><br>Deposit cash</h2>
+                        <input type="text" id="depo _acno" [(ngModel)]="acno" class="rounded-5 w-75 m-4 text-center" placeholder=" Account Number">
+                        <input type="text" id="depo_pswd" [(ngModel)]="pswd" class="rounded-5 w-75 m-4 text-center" placeholder=" Password">
+                        <input type="text" id="depo_amount" [(ngModel)]="amount" class="rounded-5 w-75 m-4 text-center" placeholder=" Amount">
+                        <br>
+                        <button type="button" class="rounded-5 text-light btn btn-primary w-50 m-4 w-75" (click)="deposit()">Deposit</button>
+
+                </div>
+
+                <div class="col-2"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="child">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+
+                <div class="col-8 bg-dark text-light mt-5 rounded-5 shadow-lg p-3 text-center">
+                    <h2 class="bg-light p-3 rounded-5 text-dark m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                        <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                    </svg>
+                    <br><br>Withdraw cash</h2>                    
+                    <input type="text" id="with _acno" [(ngModel)]="acno1" class="rounded-5 w-75 m-4 text-center" placeholder=" Account Number">
+                    <input type="text" id="with_pswd" [(ngModel)]="pswd1" class="rounded-5 w-75 m-4 text-center" placeholder=" Password">
+                    <input type="text" id="with_amount" [(ngModel)]="amount1" class="rounded-5 w-75 m-4 text-center" placeholder=" Amount">                
+                    <br>
+                    <button type="button" class="rounded-5 text-light btn btn-primary w-75 m-4" (click)="withdraw()">Withdraw</button>
+                        
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

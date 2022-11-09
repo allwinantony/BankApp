@@ -13,4 +13,30 @@ Types of Data Binding:
 
     1.2. View to component(changes happens from html->ts)
         a). Event binding -(event_name) = "function_name()"
-        b).
+        b).Even binfing- $event-(event_name)="function_name($event)"
+        c)Event binding using template referencing variable - #variable_name
+
+2. Two way binding:
+        [(ngmodel)]="property"
+
+
+Angular Routing: to set a path for a component
+
+    {
+        path:value,component:class_name
+    }
+
+    Angular services
+    
+    Angular Directives: To manipulate DOM elements
+        a) Component Directives
+        b) Structural Directives
+            1)ngFor
+
+
+
+    Angular Forms:
+        a)Template driven Forms
+        b)Model driven Forms
+            1)Reactive formsModule
+            

@@ -1,23 +1,68 @@
+<!-- <p>registration works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+
+        <div class="col-4 bg-dark text-light mt-5 rounded-5 shadow-lg p-3 text-center">
+                <h2 class="bg-warning p-3 rounded-5 text-dark m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                    </svg>
+                <br><br>Register to MyBank App</h2>
+
+                <input type="text" id="s_uname" [(ngModel)]="uname" class="rounded-5 w-50 mt-5 m-3 text-center" placeholder=" Username">
+                <input type="text" id="s _acno" [(ngModel)]="acno" class="rounded-5 w-50 m-4 text-center" placeholder=" Account Number">
+                <input type="text" id="s_pswd" [(ngModel)]="pswd" class="rounded-5 w-50 m-4 text-center" placeholder=" Password">
+                <br>
+                <button type="button" class="rounded-5 text-light btn btn-primary w-50 m-4" (click)="signup()">Sign-up</button>
+                <br><br>
+                <a routerLink="" class="text-decoration-none text-dark bg-warning rounded-5 p-1 border border-2 border-primary ps-5 pe-5">Sign-in</a>
+                <br><br>
+        </div>
+        
+        <div class="col-4"></div>
+    </div>
+</div> -->
+
+
 <!-- <p>registration works!</p> -->
 <div class="container">
     <div class="row">
         <div class="col-4"></div>
 
         <div class="col-4 bg-dark text-light mt-5 rounded-5 shadow-lg p-3 text-center">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
-                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
-                    </svg>
-                <br><br>Register to MyBank App</h2>
-                
-                <input type="text" id="s_uname" class="rounded-5 w-50 mt-5 m-3 text-center" placeholder=" Username">
-                <input type="text" id="s_acno" class="rounded-5 w-50 m-4 text-center" placeholder=" Account Number">
-                <input type="text" id="s_pswd" class="rounded-5 w-50 m-4 text-center" placeholder="&#128273; Password">
-                <br>
-                <button type="button" class="rounded-5 text-light btn btn-info w-50 m-4" onclick="signup()">Sign-up</button>
-                <br><br>
-        </div>
+            <div class="bg-light m-3 rounded-3 p-2">
+                <h2 class="bg-warning p-3 rounded-5 text-dark m-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                </svg>
+                <section class="mt-2">Register to MyBank App</section></h2>
+            </div>
+            <form [formGroup]="registerForm">
+                <div>
+                    <div class="form-field">
+                        <input formControlName="uname" type="text" id="s_uname" class="rounded-5 w-50 mt-5 m-3 text-center" placeholder=" Username">
+                    </div>
+                    <div class="form-field">
+                        <input formControlName="acno" type="text" id="s _acno"  class="rounded-5 w-50 m-4 text-center" placeholder=" Account Number">
+                    </div>
+                    <div class="form-field">                
+                        <input formControlName="pswd" type="text" id="s_pswd" class="rounded-5 w-50 m-4 text-center" placeholder=" Password">
+                    </div>
+                    <div class="form-field">
+                        <button type="button" class="rounded-5 text-light btn btn-primary w-50 m-4" (click)="signup()">Sign-up</button>
+                        <p class="bg-light rounded-2 pb-2 m-4 "><a routerLink="" class="text-decoration-none text-dark bg-light rounded-5 p-2 ps-5 pe-5">Sign-in</a></p>
+                    </div>
+                </div>
+            </form>
+
+        </div>  
         
         <div class="col-4"></div>
     </div>
 </div>
+
+
+<!-- [(ngModel)]="uname"
+[(ngModel)]="acno"
+[(ngModel)]="pswd" -->

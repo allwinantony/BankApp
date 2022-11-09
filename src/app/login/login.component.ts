@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {//3rd execution
 //properties and methods
 
-  aim = "Your perfect banking partner";
+  aim = '"Your perfect banking partner"';
   account = "Enter your acno here"
   acno=""
   pswd=""
   keysymbol="Password"
-  
-  userDetails: any ={//objects of objects
-    1000:{acno:1000, username:'Hussain',password:1000,balance:10000},
-    1001:{acno:1001, username:'Reymond',password:1000,balance:10000},
-    1002:{acno:1002, username:'Fayas',password:1000,balance:10000}
-  }
 
-  constructor() { }//1st execution
+  constructor(private router:Router, private ds: DataService) { } //1st execution
 
   ngOnInit(): void {//2nd execution- life cycle hooks of angular
     //initial process of component
@@ -36,20 +33,54 @@ export class LoginComponent implements OnInit {//3rd execution
     this.pswd=(event.target.value);
   }
 
+  // login(){
+  //   var acno = this.acno;
+  //   var pswd = this.pswd;
+  //   var userDetails = this.userDetails;
+  //   if(acno in userDetails){
+  //     if(pswd == userDetails[acno]['password']){
+  //       alert("login successfull");
+  //       this.router.navigateByUrl('dashboard');
+  //     }
+  //     else{
+  //       alert("incorrect password");
+  //     }
+  //   }
+  //   else{
+  //     alert("user not found")
+  //   }
+  // }
+
   login(){
     var acno = this.acno;
-    var pswd = this.pswd;
-    var userDetails = this.userDetails;
-    if(acno in userDetails){
-      if(pswd == userDetails[acno]['password']){
-        alert("login successfull");
-      }
-      else{
-        alert("incorrect password");
-      }
+    var pswd =this.pswd;
+    const result = this.ds.login(acno,pswd);
+    if(result){
+      alert("successfull");
+      this.router.navigateByUrl('dashboard')
     }
     else{
-      alert("user not found")
+      alert("check your password and try again")
     }
   }
-} 
+
+
+  // login(a:any,p:any){
+  //   var acno = a.value;
+  //   var pswd = p.value;
+  //   var userDetails = this.userDetails;
+  //   if(acno in userDetails){
+  //     if(pswd == userDetails[acno]['password']){
+  //       alert("login successfull");
+  //     }
+  //     else{
+  //       alert("incorrect password");
+  //     }
+  //   }
+  //   else{
+  //     alert("user not found! invalid user")
+  //   }
+  // }
+
+}
+

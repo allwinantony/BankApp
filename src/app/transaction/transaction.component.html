@@ -1,0 +1,18 @@
+<div class="w-100 bg-warning p-3">
+    <h1 class="text-center">Your Transactions</h1>
+    <a routerLink="/dashboard" class="text-decoration-none bg-light p-2 rounded-1 text-dark">Home</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor  = "let t of transaction">
+            <td>{{t.type}}</td>
+            <td>{{t.amount}}</td>
+        </tr>
+    </tbody>
+</table>
